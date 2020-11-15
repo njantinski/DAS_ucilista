@@ -1,6 +1,8 @@
 # DAS_ucilista
 Aplikacija za mapiranje na ucilistata na teritorijata na opstina karpos
 
+
+
 Проектот го изработуваат учениците:
 
 Николај Јантински 161128
