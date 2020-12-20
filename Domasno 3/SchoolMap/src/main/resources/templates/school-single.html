@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${school.getName()}"></title>
+    <script asyc defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4bIdfG9I0H5jhtqv4D3D7K5Mr4v6g-zA&callback=initMap">
+    </script>
+    
+
+        <script th:inline="javascript">
+            let schoolS =[[${school}]];
+            let map;
+
+            function initMap(){
+                var cord = {lat: schoolS.latitude, lng: schoolS.longitude};
+
+                map = new google.maps.Map(document.getElementById('map'),
+                    {
+                        center: cord,
+                        zoom: 8,
+                    });
+                //var marker = new google.maps.marker({position: cord, map: map});
+            }
+
+
+        </script>
+</head>
+<body>
+    <h1 th:text="${school.getName()}"></h1>
+  <!--  <h1 th:text="${school.getLongitude()}"></h1>
+    <h1 th:text="${school.getLatitude()}"></h1> -->
+   <div id="map" style="width:400px;height:300px"></div>
+
+
+
+</body>
+</html>

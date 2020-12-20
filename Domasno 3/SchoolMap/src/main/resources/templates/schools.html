@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Schools</title>
+</head>
+<body>
+    <table>
+        <thead>
+        <th scope="col">School Name</th>
+        </thead>
+        <tbody>
+            <tr th:each="school : ${schools}">
+
+                <td th:text="${school.getName()}"></td>
+                <td><a th:href="@{/schools/{id}(id=${school.getId()})}">Open School</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
