@@ -35,7 +35,7 @@ public class SchoolController {
             model.addAttribute("school", school);
             return "school-single";
         } catch (RuntimeException ex) {
-            return "redirect:/products?error=" + ex.getMessage();
+            return "redirect:/schools?error=" + ex.getMessage();
         }
     }
 }

@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <title>Schools</title>
 </head>
+<style>
+    ul li {
+        display:inline;
+    }
+    li{
+        margin-right: 14px;
+    }
+</style>
 <body>
+<ul>
+    <li><a href="/">Дома</a></li>
+    <li><a href="/schools">Сите училишта</a></li>
+</ul>
     <table>
         <thead>
         <th scope="col">School Name</th>
@@ -12,8 +24,8 @@
         <tbody>
             <tr th:each="school : ${schools}">
 
-                <td th:text="${school.getName()}"></td>
-                <td><a th:href="@{/schools/{id}(id=${school.getId()})}">Open School</a></td>
+                <h2><td th:text="${school.getName()}"></td></h2>
+                <h2><td><a th:href="@{/schools/{id}(id=${school.getId()})}">Прегледај училиште</a></td></h2>
             </tr>
         </tbody>
     </table>
